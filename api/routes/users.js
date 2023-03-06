@@ -306,4 +306,13 @@ router.get("/otp", checkAuth, (request, response) => {
   });
 });
 
+router.get("/test", checkAuth, (req, res)=>{
+  console.log('test', req.userData);
+
+  res.status(200).json({
+      message: req.userData
+  })
+})
+
+
 module.exports = router;

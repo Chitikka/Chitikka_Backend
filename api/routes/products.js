@@ -38,7 +38,7 @@ router.get("/all", (request, response) => {
     }
  
     if(page_size == null){
-        page_size = 20;
+        page_size = 50;
     }
 
     // OFFSET starts from zero
@@ -180,6 +180,8 @@ router.post("/insert", checkAuth, uploadImage.single('image'), (request, respons
     const supplier = request.body.supplier
     const category = request.body.category
     
+    console.log(request);
+
     const file = request.file;
     var filePath = ""
     if(file != null){
